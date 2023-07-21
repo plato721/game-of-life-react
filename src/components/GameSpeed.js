@@ -6,13 +6,12 @@ const GameSpeed = ({ selectHandler, speed }) => {
   return (
     <div>
       <Slider
-        value={speed}
-        onChange={selectHandler}
-        sx={{
-          root: {
-            width: 600
-          }
-        }}
+          value={speed}
+          onChange={selectHandler}
+      sx={{ root: {
+          width: 600
+         }
+      }}
       />
       <Typography id="game-speed" gutterBottom>
         Game Speed
