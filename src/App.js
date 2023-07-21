@@ -48,8 +48,9 @@ function App() {
     console.log("play button clicked")
     return !playing
   })
-  const handleGameSpeedSelect = (e, value) =>
+  const handleGameSpeedSelect = ((e, value) =>{
       setTickDelay(tickDelayFromSpeed(value))
+  })
   const handleRefreshButtonClick = () =>
       setNewBoard(randomBoard({ numRows, numColumns }))
 
@@ -70,12 +71,12 @@ function App() {
             <RefreshButton clickHandler={handleRefreshButtonClick} />
             <PlayButton clickHandler={handlePlayButtonClick} playing={playing} />
           </Grid>
-          {/*<Grid item>*/}
-          {/*  <GameSpeed*/}
-          {/*      selectHandler={handleGameSpeedSelect}*/}
-          {/*      speed={speedFromTickDelay(tickDelay)}*/}
-          {/*  />*/}
-          {/*</Grid>*/}
+          <Grid item>
+            <GameSpeed
+                selectHandler={handleGameSpeedSelect}
+                speed={speedFromTickDelay(tickDelay)}
+            />
+          </Grid>
         </Grid>
       </Container>
   )
