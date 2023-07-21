@@ -44,7 +44,10 @@ function App() {
     return MAXSPEED - rescaled + MINSPEED
   }
 
-  const handlePlayButtonClick = () => setPlaying((playing) => !playing)
+  const handlePlayButtonClick = () => setPlaying((playing) => {
+    console.log("play button clicked")
+    return !playing
+  })
   const handleGameSpeedSelect = (e, value) =>
       setTickDelay(tickDelayFromSpeed(value))
   const handleRefreshButtonClick = () =>

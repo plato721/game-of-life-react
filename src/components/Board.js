@@ -16,34 +16,24 @@ const Board = ({ playing, tickDuration, initialBoard }) => {
     })
   }
 
-  const updateGameRunning = (playing) => {
-    if (playing) {
-      tickInterval.current = setInterval(() => {
-        setBoard((prevBoard) => advanceBoard(prevBoard))
-      }, tickDuration)
-      return () => clearInterval(tickInterval.current)
-    } else {
-      clearInterval(tickInterval.current)
-      tickInterval.current = null
-    }
-    let newBoard = advanceBoard(board);
-    setBoard(newBoard)
-  }
-
   useEffect(() => {
+    const updateGameRunning = (playing) => {
+      if (playing) {
+        tickInterval.current = setInterval(() => {
+          setBoard((prevBoard) => advanceBoard(prevBoard))
+        }, tickDuration)
+        return () => clearInterval(tickInterval.current)
+      } else {
+        clearInterval(tickInterval.current)
+        tickInterval.current = null
+      }
+    }
+    clearInterval(tickInterval.current)
+
     if (playing) {
-      clearInterval(tickInterval.current)
       updateGameRunning(playing)
     }
-  }, [tickDuration, playing, updateGameRunning])
-
-  useEffect(() => {
-    return updateGameRunning(playing)
-  }, [playing, updateGameRunning])
-
-  useEffect(() => {
-    setBoard(initialBoard)
-  }, [initialBoard])
+  }, [tickDuration, playing])
 
   return <DisplayBoard board={board} handleCellClick={handleCellClick} />
 }

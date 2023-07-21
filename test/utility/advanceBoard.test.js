@@ -1,4 +1,4 @@
-import advanceBoard from "../../utility/advanceBoard"
+import advanceBoard from "../../src/utility/advanceBoard"
 
 test("a blank board becomes a blank board", () => {
   const board = [
