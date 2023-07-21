@@ -17,21 +17,15 @@ const Board = ({ playing, tickDuration, initialBoard }) => {
   }
 
   useEffect(() => {
-    const updateGameRunning = (playing) => {
-      if (playing) {
-        tickInterval.current = setInterval(() => {
-          setBoard((prevBoard) => advanceBoard(prevBoard))
-        }, tickDuration)
-        return () => clearInterval(tickInterval.current)
-      } else {
-        clearInterval(tickInterval.current)
-        tickInterval.current = null
-      }
-    }
     clearInterval(tickInterval.current)
 
     if (playing) {
-      updateGameRunning(playing)
+      tickInterval.current = setInterval(() => {
+        setBoard((prevBoard) => advanceBoard(prevBoard))
+      }, tickDuration)
+      return () => clearInterval(tickInterval.current)
+    } else {
+      tickInterval.current = null
     }
   }, [tickDuration, playing])
 
