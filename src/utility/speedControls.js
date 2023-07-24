@@ -1,11 +1,11 @@
 const configs = {
-  minSpeed : 1,
-  maxSpeed : 100,
-  minDelay : 50,
-  maxDelay : 1250
+  minSpeed: 1,
+  maxSpeed: 100,
+  minDelay: 50,
+  maxDelay: 1250
 }
 
-const medianSpeed = () => Math.round((configs.minSpeed + configs.maxSpeed)/2)
+const medianSpeed = () => Math.round((configs.minSpeed + configs.maxSpeed) / 2)
 
 // take speed 1 to 100 and map to tick delay
 const tickDelayFromSpeed = (speed) => {
