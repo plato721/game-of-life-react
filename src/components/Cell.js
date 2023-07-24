@@ -1,6 +1,6 @@
 import React from "react"
 
-const Cell = ({ alive, row, column, handleClick }) => {
+const Cell = ({alive, row, column, handleClick}) => {
   const cellClicked = () => handleClick(row, column)
 
   return alive ? (

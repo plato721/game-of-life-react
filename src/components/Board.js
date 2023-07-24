@@ -1,8 +1,8 @@
 import React from "react"
 import Cell from "./Cell"
-import { Grid } from "@mui/material"
+import {Grid} from "@mui/material"
 
-const DisplayBoard = ({ board, handleCellClick }) => {
+const Board = ({board, handleCellClick}) => {
   const renderRow = (row, rowNumber) => {
     return row.map((isAlive, colNumber) => {
       return (
@@ -37,4 +37,4 @@ const DisplayBoard = ({ board, handleCellClick }) => {
   )
 }
 
-export default DisplayBoard
+export default Board
