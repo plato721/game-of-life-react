@@ -23,7 +23,7 @@ const speedFromTickDelay = (delay) => {
   return configs.maxSpeed - rescaled + configs.minSpeed
 }
 
-var exports = {
+const exports = {
   tickDelayFromSpeed: tickDelayFromSpeed,
   speedFromTickDelay: speedFromTickDelay,
   configs: configs,

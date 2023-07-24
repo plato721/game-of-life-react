@@ -8,7 +8,7 @@ import {Grid} from "@mui/material"
 import {Container} from "@mui/material"
 import randomBoard from "../utility/randomBoard"
 import advanceBoard from "../utility/advanceBoard";
-import DisplayBoard from "./DisplayBoard";
+import Board from "./Board";
 import speedControls from "../utility/speedControls"
 
 function Game() {
@@ -66,7 +66,7 @@ function Game() {
           <h2>{"Conway's Game of Life"}</h2>
         </Grid>
         <Grid item>
-          <DisplayBoard
+          <Board
             board={board}
             handleCellClick={handleCellClick}
           />
